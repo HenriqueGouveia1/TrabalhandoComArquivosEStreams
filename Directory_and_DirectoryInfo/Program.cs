@@ -1,6 +1,16 @@
 ﻿CriarDiretorio();
 CriarArquivo();
 
+var origem = Path.Combine(Environment.CurrentDirectory, "brasil.txt");
+var destino = Path.Combine(Environment.CurrentDirectory, "globo", "América do Sul","Brasil","brasil.txt");
+
+MoverArquivo(origem, destino);
+
+static void MoverArquivo(string pathO, string pathD)
+{
+    File.Move(pathO, pathD);
+}
+
 static void CriarArquivo()
 {
     var path = Path.Combine(Environment.CurrentDirectory, "brasil.txt");
