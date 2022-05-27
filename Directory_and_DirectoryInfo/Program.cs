@@ -1,12 +1,24 @@
-﻿var path = Path.Combine(Environment.CurrentDirectory, "globo");
-var dirGLobo = Directory.CreateDirectory(path);
+﻿CriarDiretorio();
 
-var dirAmericaNorte = dirGLobo.CreateSubdirectory("América do Norte");
-var dirAmericaSul = dirGLobo.CreateSubdirectory("América do Sul");
-var dirAmericaCentro = dirGLobo.CreateSubdirectory("América Central");
+static void CriarDiretorio()
+{
+    var path = Path.Combine(Environment.CurrentDirectory, "globo");
 
-dirAmericaCentro.CreateSubdirectory("Costa Rica");
+    if (!Directory.Exists(path))
+    {
+        var dirGLobo = Directory.CreateDirectory(path);
 
-dirAmericaNorte.CreateSubdirectory("USA");
+        var dirAmericaNorte = dirGLobo.CreateSubdirectory("América do Norte");
+        var dirAmericaSul = dirGLobo.CreateSubdirectory("América do Sul");
+        var dirAmericaCentro = dirGLobo.CreateSubdirectory("América Central");
 
-dirAmericaSul.CreateSubdirectory("Brasil");
+        dirAmericaCentro.CreateSubdirectory("Costa Rica");
+
+        dirAmericaNorte.CreateSubdirectory("USA");
+
+        dirAmericaSul.CreateSubdirectory("Brasil");
+    }
+
+
+}
+
