@@ -8,6 +8,16 @@ MoverArquivo(origem, destino);
 
 static void MoverArquivo(string pathO, string pathD)
 {
+    if (!File.Exists(pathO))
+    {
+       Console.WriteLine("Arquido de origem não existe");
+       return;
+    }
+    if (!File.Exists(pathD))
+    {
+        Console.WriteLine("Arquido de destino não existe");
+        return;
+    }
     File.Move(pathO, pathD);
 }
 
