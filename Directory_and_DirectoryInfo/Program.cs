@@ -6,6 +6,21 @@ var destino = Path.Combine(Environment.CurrentDirectory, "globo", "América do S
 
 MoverArquivo(origem, destino);
 
+static void CopiarArquivo(string pathO, string pathD)
+{
+    if (!File.Exists(pathO))
+    {
+       Console.WriteLine("Arquido de origem não existe");
+       return;
+    }
+    if (!File.Exists(pathD))
+    {
+        Console.WriteLine("Arquido de destino não existe");
+        return;
+    }
+    File.Copy(pathO, pathD);
+}
+
 static void MoverArquivo(string pathO, string pathD)
 {
     if (!File.Exists(pathO))
