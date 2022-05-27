@@ -1,5 +1,13 @@
 ﻿CriarDiretorio();
 
+
+static void CriarArquivo()
+{
+    var path = Path.Combine(Environment.CurrentDirectory, "brasil.txt");
+    using var sw = File.CreateText(path);
+    sw.WriteLine("dale");
+}
+
 static void CriarDiretorio()
 {
     var path = Path.Combine(Environment.CurrentDirectory, "globo");
