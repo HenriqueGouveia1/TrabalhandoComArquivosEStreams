@@ -11,6 +11,7 @@ var tamanho = 0;
 
 do
 {
+    buffer = new char[10];
     tamanho = sr.Read(buffer);
     Console.WriteLine(string.Join("", buffer));
 } while (tamanho >= buffer.Length);
