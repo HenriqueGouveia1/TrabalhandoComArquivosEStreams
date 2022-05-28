@@ -27,17 +27,17 @@ static void LerCsvComOutroDelimiter()
     };
     using var csvReader = new CsvReader(sr, csvConfig);
 
-    var registros = csvReader.GetRecords<Livro>();
+    var registros = csvReader.GetRecords<Livro>().ToList();
 
     foreach (var registro in registros)
     {
         Console.WriteLine($"nome:{registro.Titulo}");
         Console.WriteLine($"Autor:{registro.Autor}");
-        Console.WriteLine($"preco:{registro.Preco}");
+        Console.WriteLine($"Preço:{registro.Preco}");
+        Console.WriteLine($"Lançamento:{registro.Lancamento}");
         Console.WriteLine("--------");
     }
 }
-
 
 static void LerCsvComClasse()
 {
