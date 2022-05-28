@@ -25,8 +25,9 @@ static void LerCsvComOutroDelimiter()
     {
         Delimiter = ";"
     };
-    using var csvReader = new CsvReader(sr, csvConfig);
 
+    using var csvReader = new CsvReader(sr, csvConfig);
+    csvReader.Context.RegisterClassMap<LivroMap>();
     var registros = csvReader.GetRecords<Livro>().ToList();
 
     foreach (var registro in registros)
